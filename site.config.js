@@ -1,6 +1,6 @@
 module.exports = {
-  siteName: 'My Product',
-  homepage: 'https://myproduct.com',
+  siteName: 'CFP Template',
+  homepage: 'https://cfptemplate.com',
   authorName: 'Colby Fayock',
   authorUrl: 'https://twitter.com/colbyfayock',
   supportEmail: 'hello@colbyfayock.com',
@@ -29,6 +29,6 @@ module.exports = {
     ]
   },
   env: {
-    gaPropertyId: 'XX-123456789-1'
+    gaPropertyId: 'G-YFX7C710M4'
   }
 }

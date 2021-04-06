@@ -41,12 +41,6 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section>
-        <Container>
-          <Video width="560" height="315" src="https://www.youtube.com/embed/QjZIeA952jE" />
-        </Container>
-      </Section>
-
       <FeatureList features={[
         '🤔 What is it?',
         '💪 What makes it so awesome?',
