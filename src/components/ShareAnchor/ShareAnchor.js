@@ -11,7 +11,17 @@ import Button from 'components/Button';
 import styles from './ShareAnchor.module.scss';
 
 const twitterAction = createTweetAction({
-  message: [`Yo, @colbyfayock - this is cool!`]
+  message: [
+`📝 Looking to make your next CFP submission a little smoother?
+
+🚀 Check out @colbyfayock's CFP Template
+
+🧐 Includes a proposal template, speaker bio template, and even guides to get started
+
+👇 Go download it FREE!
+
+https://cfptemplate.com`
+  ]
 });
 
 const ShareAnchor = ({ children, className, backgroundColor = 'primary' }) => {
