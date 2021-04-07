@@ -36,7 +36,11 @@
   padding: 5em 0 2em;
 
   @media (min-width: 800px) {
-    padding: 5em 0;
+    padding: 12vw 0;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 10em 0;
   }
 
 }
@@ -163,6 +167,146 @@
 
     }
 
+  }
+
+}
+
+.homeExpectSection {
+
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 -10px 35px rgb(0 0 0 / 10%);
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+  }
+
+  ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    font-size: 1.4em;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 1024px) {
+      flex-wrap: nowrap;
+      margin: 0 -1.5em;
+    }
+
+  }
+
+  li {
+
+    width: 100%;
+    padding: 0 1.5em;
+
+    @media (min-width: 800px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+      width: auto;
+    }
+
+  }
+
+}
+
+.homeFormatsContainer {
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+
+  & > div {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: 800px) {
+      width: 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+  }
+
+}
+
+.homeFormatsContent {
+
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2em;
+
+  @media (min-width: 800px) {
+    text-align: left;
+    padding-right: 2em;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 1.4em;
+    margin: 0;
+  }
+
+}
+
+.homeFormatsLogos {
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33.33%;
+    padding: 1em;
+  }
+
+  p {
+    color: $color-gray-200;
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+}
+
+.homeFormatsLogosIcon {
+
+  display: block;
+  font-size: 4em;
+  margin-bottom: 0;
+
+  @media (min-width: 800px) {
+    font-size: 5em;
   }
 
 }

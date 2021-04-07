@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet';
+import { FaMarkdown, FaFilePdf, FaGoogleDrive, FaFileWord } from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
+import { IoDocumentText } from 'react-icons/io5';
 
 import useSite from 'hooks/use-site';
 
@@ -65,11 +68,97 @@ export default function Home() {
         </Container>
       </Section>
 
-      <FeatureList features={[
-        '🤔 What is it?',
-        '💪 What makes it so awesome?',
-        '😢 What isn\'t it great at?'
-      ]} />
+      <Section className={styles.homeExpectSection}>
+        <Container>
+          <h2>What to expect?</h2>
+          <ul>
+            <li>
+              <h3>Proposal Template</h3>
+              <p>
+                Optimized templates in multiple formats that let you focus on what makes your proposal unique.
+              </p>
+            </li>
+            <li>
+              <h3>Speaker Bio Template</h3>
+              <p>
+              Don’t get stuck searching for your headshot, start your proposal with all your information in one place.
+              </p>
+            </li>
+            <li>
+              <h3>CFP Guides</h3>
+              <p>
+                Learn how to make the best use of these templates along with some tips for what makes a good proposal.
+              </p>
+            </li>
+          </ul>
+        </Container>
+      </Section>
+
+      <Section backgroundColor="primary">
+        <Container className={styles.homeFormatsContainer}>
+          <div className={styles.homeFormatsContent}>
+            <h2>
+              All the formats you’ve grown to love and expect like Notion,
+              Markdown, and Google Docs.
+            </h2>
+            <p>
+              Missing one? <a href="mailto:hello@colbyfayock.com">Let me know</a>!
+            </p>
+          </div>
+          <div className={styles.homeFormatsLogos}>
+            <ul>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <SiNotion />
+                </span>
+                <p>
+                  Notion
+                </p>
+              </li>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <FaMarkdown />
+                </span>
+                <p>
+                  Markdown
+                </p>
+              </li>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <FaGoogleDrive />
+                </span>
+                <p>
+                  Google Docs
+                </p>
+              </li>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <FaFileWord />
+                </span>
+                <p>
+                  MS Word
+                </p>
+              </li>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <FaFilePdf />
+                </span>
+                <p>
+                  PDF
+                </p>
+              </li>
+              <li>
+                <span className={styles.homeFormatsLogosIcon}>
+                  <IoDocumentText />
+                </span>
+                <p>
+                  TextBundle
+                </p>
+              </li>
+            </ul>
+          </div>
+        </Container>
+      </Section>
 
       <Section className={styles.homeSectionForm}>
         <Container>
