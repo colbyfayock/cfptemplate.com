@@ -160,10 +160,10 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className={styles.homeSectionForm}>
+      <Section className={styles.homeDownloadSection}>
         <Container>
           <h2>
-            Get your copy!
+            Grab your free copy!
           </h2>
 
           <Form action={`https://app.convertkit.com/forms/${form.actionId}/subscriptions`}>
@@ -172,7 +172,7 @@ export default function Home() {
                 Get the <strong>FREE</strong> template straight to your inbox.
               </p>
             </FormRow>
-            <div className={styles.homeHeroFormInputs}>
+            <div className={styles.homeDownloadFormInputs}>
               <FormRow>
                 <input name="email_address" aria-label="Your email address" placeholder="Email Address" required type="email" />
               </FormRow>
