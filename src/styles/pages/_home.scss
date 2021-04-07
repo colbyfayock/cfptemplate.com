@@ -47,18 +47,30 @@
 
 .homeTitle {
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 10vw;
   font-weight: 900;
   text-align: center;
   margin: 0;
 
   @media (min-width: 800px) {
-    font-size: 7vw;
+    font-size: 6vw;
     text-align: left;
+    justify-content: flex-start;
   }
 
   @media (min-width: 1024px) {
-    font-size: 4.8em;
+    font-size: 4em;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 5em;
+  }
+
+  svg {
+    margin-right: .2em;
   }
 
 }

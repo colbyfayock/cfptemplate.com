@@ -15,6 +15,7 @@ import Video from 'components/Video';
 import Form from 'components/Form';
 import FormRow from 'components/FormRow';
 import SectionAuthor from 'components/SectionAuthor';
+import CfpLogo from 'components/CfpLogo';
 
 import cfpTemplatePreview from 'images/cfp-template-preview.png';
 
@@ -36,6 +37,7 @@ export default function Home() {
         <Container className={styles.homeHeroContainer}>
           <div className={styles.homeHeroContent}>
             <h1 className={styles.homeTitle}>
+              <CfpLogo />
               { siteName }
             </h1>
 
