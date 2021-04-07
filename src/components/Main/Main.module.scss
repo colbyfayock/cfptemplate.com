@@ -1,1 +1,14 @@
-.main {}
+.main {
+
+  display: flex;
+  flex-direction: column;
+
+  & > section {
+
+    &:last-child {
+      flex-grow: 1;
+    }
+
+  }
+
+}

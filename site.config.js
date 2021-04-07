@@ -4,6 +4,9 @@ module.exports = {
   authorName: 'Colby Fayock',
   authorUrl: 'https://twitter.com/colbyfayock',
   supportEmail: 'hello@colbyfayock.com',
+  form: {
+    actionId: '2178655'
+  },
   footer: {
     links: [
       {

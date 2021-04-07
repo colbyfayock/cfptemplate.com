@@ -18,11 +18,18 @@
 
     &:active,
     &:focus {
-      border: solid 5px $color-secondary;
+      border: solid 5px $color-primary;
     }
 
     &::-webkit-details-marker {
       color: $color-primary;
+    }
+
+    h2,
+    h3,
+    h4 {
+      display: inline-block;
+      margin: 0;
     }
 
   }

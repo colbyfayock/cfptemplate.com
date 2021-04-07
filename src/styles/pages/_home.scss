@@ -1,28 +1,170 @@
-.homeTitle {
+@import "styles/settings/__settings";
+
+.homeHeroSection {
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.homeHeroContainer {
 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 9vw;
-  margin-top: 0;
-  margin-bottom: .5em;
+  flex-direction: column;
 
-  @media (min-width: 50em) {
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+
+  & > div {
+
+    width: 100%;
+
+    @media (min-width: 800px) {
+      width: 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+  }
+
+}
+
+.homeHeroContent {
+
+  padding: 5em 0 2em;
+
+  @media (min-width: 800px) {
+    padding: 5em 0;
+  }
+
+}
+
+.homeTitle {
+
+  font-size: 10vw;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+
+  @media (min-width: 800px) {
+    font-size: 7vw;
+    text-align: left;
+  }
+
+  @media (min-width: 1024px) {
     font-size: 4.8em;
   }
 
 }
 
 .homeSubtitle {
+
   display: block;
   width: 100%;
+  font-size: 6vw;
   text-align: center;
-  font-size: 2em;
-  margin-bottom: 1.5em;
+  margin: .6em 0 1em;
+
+  @media (min-width: 800px) {
+    font-size: 4vw;
+    text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 2em;
+    text-align: left;
+  }
+
 }
 
-.homeAction {
+.homeHeroImage {
+
+  position: relative;
+  padding-top: 60%;
+
+  @media (min-width: 800px) {
+    padding-top: 0;
+  }
+
+
+  img {
+
+    position: absolute;
+    top: -2em;
+    width: 170vw;
+    margin-bottom: -12em;
+
+    @media (min-width: 800px) {
+      top: 1em;
+      left: 0;
+      width: 100vw;
+    }
+
+    @media (min-width: 1024px) {
+      width: 70vw;
+    }
+
+  }
+
+}
+
+.homeHeroForm {
+
   text-align: center;
+
+  @media (min-width: 800px) {
+    text-align: left;
+  }
+
+  p {
+    font-size: 1.4em;
+    color: $color-gray-500;
+  }
+
+  button,
+  input {
+
+    width: 100%;
+    max-width: none;
+
+    @media (min-width: 480px) {
+      width: auto;
+    }
+
+  }
+
+  input {
+
+    text-align: center;
+
+    @media (min-width: 800px) {
+      text-align: left;
+    }
+
+  }
+
+}
+
+.homeHeroFormInputs {
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+
+  & > div {
+
+    &:first-child {
+
+      @media (min-width: 1024px) {
+        margin-right: 1em;
+      }
+
+    }
+
+  }
+
 }
 
 .homeSectionForm {

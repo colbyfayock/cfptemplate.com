@@ -1,0 +1,38 @@
+.gettingStartedSection {
+
+  text-align: center;
+
+  h1,
+  h2,
+  h3,
+  p {
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.6em;
+  }
+
+  summary {
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+  }
+
+}

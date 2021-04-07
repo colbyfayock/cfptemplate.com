@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-import styles from 'styles/App.module.scss';
 
 import useSite from 'hooks/use-site';
 
@@ -11,11 +10,16 @@ import FeatureList from 'components/FeatureList';
 import Details from 'components/Details';
 import Video from 'components/Video';
 import Form from 'components/Form';
+import FormRow from 'components/FormRow';
 import SectionAuthor from 'components/SectionAuthor';
+
+import cfpTemplatePreview from 'images/cfp-template-preview.png';
+
+import styles from 'styles/App.module.scss';
 
 export default function Home() {
   const { metadata } = useSite();
-  const { siteName } = metadata;
+  const { siteName, form } = metadata;
 
   return (
     <Layout displayNav={false}>
@@ -25,19 +29,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
 
-      <Section>
-        <Container>
-          <h1 className={styles.homeTitle}>
-            { siteName }
-          </h1>
+      <Section className={styles.homeHeroSection}>
+        <Container className={styles.homeHeroContainer}>
+          <div className={styles.homeHeroContent}>
+            <h1 className={styles.homeTitle}>
+              { siteName }
+            </h1>
 
-          <p className={styles.homeSubtitle}>
-            Get started today!
-          </p>
+            <p className={styles.homeSubtitle}>
+              Organize and DRY up submitting your conference proposals!
+            </p>
 
-          <p className={styles.homeAction}>
-            <Button>Get Started</Button>
-          </p>
+            <Form className={styles.homeHeroForm} action={`https://app.convertkit.com/forms/${form.actionId}/subscriptions`}>
+              <FormRow>
+                <p>
+                  Get the <strong>FREE</strong> template straight to your inbox.
+                </p>
+              </FormRow>
+              <div className={styles.homeHeroFormInputs}>
+                <FormRow>
+                  <input name="email_address" aria-label="Your email address" placeholder="Email Address" required type="email" />
+                </FormRow>
+                <FormRow>
+                  <Button>
+                    Download Free
+                  </Button>
+                </FormRow>
+              </div>
+            </Form>
+          </div>
+
+          <div className={styles.homeHeroImage}>
+            <img src={cfpTemplatePreview} alt="CFP Template Preview" />
+          </div>
         </Container>
       </Section>
 
@@ -47,36 +71,28 @@ export default function Home() {
         '😢 What isn\'t it great at?'
       ]} />
 
-      <Section>
-        <Container>
-          <Details>
-            <summary>
-              What to expect?
-            </summary>
-            <p>
-              In summary...
-            </p>
-          </Details>
-        </Container>
-      </Section>
-
       <Section className={styles.homeSectionForm}>
         <Container>
           <h2>
-            Susbcribe to My Newsletter
+            Get your copy!
           </h2>
-          <p>
-            Get free weekly tutorials straight to your inbox!
-          </p>
-          <Form action="https://colbyfayock.com/newsletter">
-            <p>
-              <input name="email_address" aria-label="Your email address" placeholder="Your email address" required type="email" />
-            </p>
-            <p>
-              <Button>
-                Get Free Tutorials
-              </Button>
-            </p>
+
+          <Form action={`https://app.convertkit.com/forms/${form.actionId}/subscriptions`}>
+            <FormRow>
+              <p>
+                Get the <strong>FREE</strong> template straight to your inbox.
+              </p>
+            </FormRow>
+            <div className={styles.homeHeroFormInputs}>
+              <FormRow>
+                <input name="email_address" aria-label="Your email address" placeholder="Email Address" required type="email" />
+              </FormRow>
+              <FormRow>
+                <Button>
+                  Download Free
+                </Button>
+              </FormRow>
+            </div>
           </Form>
         </Container>
       </Section>
