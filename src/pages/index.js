@@ -17,7 +17,7 @@ import FormRow from 'components/FormRow';
 import SectionAuthor from 'components/SectionAuthor';
 import CfpLogo from 'components/CfpLogo';
 
-import cfpTemplatePreview from 'images/cfp-template-preview.png';
+
 
 import styles from 'styles/App.module.scss';
 
@@ -45,7 +45,22 @@ export default function Home() {
               Organize and DRY up submitting your conference proposals!
             </p>
 
-            <Form className={styles.homeHeroForm} action={`https://app.convertkit.com/forms/${form.actionId}/subscriptions`}>
+  
+  
+
+            <Form className={styles.homeHeroForm} action="https://mailtik.spacejelly.dev/api/forms/cfp-template">
+              <input type="text" autoComplete="off" tabIndex={-1} style={{
+                position: "absolute",
+                left: "-9999px",
+                width: "0",
+                height: "0",
+                border: "0",
+                padding: "0",
+                margin: "0",
+                overflow: "hidden"
+              }} name="phone" value="" />
+              <input type="hidden" name="redirect" value="https://cfptemplate.com" />
+              <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
               <FormRow>
                 <p>
                   Get the <strong>FREE</strong> template straight to your inbox.
@@ -53,7 +68,7 @@ export default function Home() {
               </FormRow>
               <div className={styles.homeHeroFormInputs}>
                 <FormRow>
-                  <input name="email_address" aria-label="Your email address" placeholder="Email Address" required type="email" />
+                  <input name="email" aria-label="Your email address" placeholder="Email Address" required type="email" />
                 </FormRow>
                 <FormRow>
                   <Button>
@@ -65,7 +80,7 @@ export default function Home() {
           </div>
 
           <div className={styles.homeHeroImage}>
-            <img src={cfpTemplatePreview} alt="CFP Template Preview" />
+            <img src="/images/cfp-template-preview.png" alt="CFP Template Preview" />
           </div>
         </Container>
       </Section>
