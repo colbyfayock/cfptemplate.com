@@ -125,7 +125,7 @@ export default function Home() {
                 overflow: "hidden"
               }} name="phone" defaultValue="" readOnly />
               <input type="hidden" name="redirect" value="https://cfptemplate.com" />
-              <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
+              <input type="hidden" name="tags" value="location:cfptemplate.com" />
               <FormRow>
                 <p>
                   Get the <strong>FREE</strong> template straight to your inbox.
@@ -260,7 +260,7 @@ export default function Home() {
               overflow: "hidden"
             }} name="phone" defaultValue="" readOnly />
             <input type="hidden" name="redirect" value="https://cfptemplate.com" />
-            <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
+            <input type="hidden" name="tags" value="location:cfptemplate.com" />
             <FormRow>
               <p>
                 Get the <strong>FREE</strong> template straight to your inbox.
