@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FaMarkdown, FaFilePdf, FaGoogleDrive, FaFileWord } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
@@ -24,6 +25,40 @@ import styles from 'styles/App.module.scss';
 export default function Home() {
   const { metadata } = useSite();
   const { siteName, form } = metadata;
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    const formData = new FormData(e.target);
+    const formAction = e.target.action;
+    
+    try {
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        if (result.redirectUrl) {
+          window.location.href = result.redirectUrl;
+        } else {
+          // Fallback to form redirect input or default
+          const redirectUrl = formData.get('redirect') || 'https://cfptemplate.com';
+          window.location.href = redirectUrl;
+        }
+      } else {
+        setIsLoading(false);
+      }
+    } catch (error) {
+      setIsLoading(false);
+    }
+  };
+
+
 
   return (
     <Layout displayNav={false}>
@@ -48,7 +83,7 @@ export default function Home() {
   
   
 
-            <Form className={styles.homeHeroForm} action="https://mailtik.spacejelly.dev/api/forms/cfp-template">
+            <Form className={styles.homeHeroForm} action="https://mailtik.spacejelly.dev/api/forms/cfp-template" onSubmit={handleSubmit}>
               <input type="text" autoComplete="off" tabIndex={-1} style={{
                 position: "absolute",
                 left: "-9999px",
@@ -58,7 +93,7 @@ export default function Home() {
                 padding: "0",
                 margin: "0",
                 overflow: "hidden"
-              }} name="phone" value="" />
+              }} name="phone" defaultValue="" readOnly />
               <input type="hidden" name="redirect" value="https://cfptemplate.com" />
               <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
               <FormRow>
@@ -71,7 +106,7 @@ export default function Home() {
                   <input name="email" aria-label="Your email address" placeholder="Email Address" required type="email" />
                 </FormRow>
                 <FormRow>
-                  <Button>
+                  <Button loading={isLoading}>
                     Download Free
                   </Button>
                 </FormRow>
@@ -183,7 +218,19 @@ export default function Home() {
             Grab your free copy!
           </h2>
 
-          <Form action={`https://app.convertkit.com/forms/${form.actionId}/subscriptions`}>
+          <Form action="https://mailtik.spacejelly.dev/api/forms/cfp-template" onSubmit={handleSubmit}>
+            <input type="text" autoComplete="off" tabIndex={-1} style={{
+              position: "absolute",
+              left: "-9999px",
+              width: "0",
+              height: "0",
+              border: "0",
+              padding: "0",
+              margin: "0",
+              overflow: "hidden"
+            }} name="phone" defaultValue="" readOnly />
+            <input type="hidden" name="redirect" value="https://cfptemplate.com" />
+            <input type="hidden" name="tags" value="location:spacejelly.dev,testtag" />
             <FormRow>
               <p>
                 Get the <strong>FREE</strong> template straight to your inbox.
@@ -191,10 +238,10 @@ export default function Home() {
             </FormRow>
             <div className={styles.homeDownloadFormInputs}>
               <FormRow>
-                <input name="email_address" aria-label="Your email address" placeholder="Email Address" required type="email" />
+                <input name="email" aria-label="Your email address" placeholder="Email Address" required type="email" />
               </FormRow>
               <FormRow>
-                <Button>
+                <Button loading={isLoading}>
                   Download Free
                 </Button>
               </FormRow>
