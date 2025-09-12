@@ -3,7 +3,7 @@ import useSite from 'hooks/use-site';
 import Container from 'components/Container';
 import Section from 'components/Section';
 
-import imageColby from 'images/colby-fayock.jpg';
+
 
 import styles from './SectionAuthor.module.scss';
 
@@ -15,7 +15,7 @@ const SectionAuthor = () => {
     <Section className={styles.sectionAuthor} backgroundColor="secondary">
       <Container className={styles.sectionAuthorContainer}>
         <div className={styles.sectionAuthorPicture}>
-          <img width="200" height="200" src={imageColby} alt="Colby Fayock hugging stuffed Star Wars toys" />
+          <img width="200" height="200" src="/images/colby-fayock.jpg" alt="Colby Fayock hugging stuffed Star Wars toys" />
         </div>
         <div>
           <h3>
