@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Helmet } from 'react-helmet';
 import { FaMarkdown, FaFilePdf, FaGoogleDrive, FaFileWord } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
@@ -26,6 +27,8 @@ export default function Home() {
   const { metadata } = useSite();
   const { siteName, form } = metadata;
   const [isLoading, setIsLoading] = useState(false);
+  const [banner, setBanner] = useState(null);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,7 +61,21 @@ export default function Home() {
     }
   };
 
-
+  useEffect(() => {
+    const { status, message } = router.query;
+    
+    if (status === 'success') {
+      setBanner({
+        type: 'success',
+        message: 'Check your inbox for a download link!'
+      });
+    } else if (status === 'error') {
+      setBanner({
+        type: 'error', 
+        message: 'Something went wrong. Please try again.'
+      });
+    }
+  }, [router.query]);
 
   return (
     <Layout displayNav={false}>
@@ -67,6 +84,14 @@ export default function Home() {
         <title>{ siteName }</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
+
+      {banner && (
+        <div className={`${styles.banner} ${styles[banner.type]}`}>
+          <Container>
+            <p>{banner.message}</p>
+          </Container>
+        </div>
+      )}
 
       <Section className={styles.homeHeroSection}>
         <Container className={styles.homeHeroContainer}>
