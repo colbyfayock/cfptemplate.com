@@ -49,14 +49,19 @@ export default function Home() {
         if (result.redirectUrl) {
           window.location.href = result.redirectUrl;
         } else {
-          // Fallback to form redirect input or default
+          // Fallback to form redirect input or default with success params
           const redirectUrl = formData.get('redirect') || 'https://cfptemplate.com';
-          window.location.href = redirectUrl;
+          window.location.href = `${redirectUrl}?status=success&message=Verification+email+sent+successfully`;
         }
       } else {
-        setIsLoading(false);
+        throw new Error('Form submission error');
       }
     } catch (error) {
+      // Show error banner for network errors
+      setBanner({
+        type: 'error',
+        message: 'Something went wrong. Please try again.'
+      });
       setIsLoading(false);
     }
   };
