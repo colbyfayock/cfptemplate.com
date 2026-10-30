@@ -1,0 +1,36 @@
+---
+import styles from '../styles/App.module.css';
+import Layout from '../components/Layout/Layout.astro';
+import Section from '../components/Section/Section.astro';
+import Container from '../components/Container/Container.astro';
+import Details from '../components/Details/Details.astro';
+---
+
+<Layout displayNav={false}>
+  <Section className={styles.gettingStartedSection}>
+    <Container>
+      <h1>Check your inbox!</h1>
+      <p>You should receive an email within a few minutes that includes a big button to download your templates.</p>
+      <p><a href="/">Back to Home</a></p>
+    </Container>
+  </Section>
+
+  <Section className={styles.gettingStartedSection} backgroundColor="secondary">
+    <Container>
+      <h2>Common Questions</h2>
+      <Details>
+        <summary><h3>Didn't get an email?</h3></summary>
+        <p>If you never received an email, first try checking your Spam folder or your Promotions tab.</p>
+        <p>
+          If you still can't find it, did you sign up for a previous version of the ebook? Try searching in your email's
+          Trash folder. The system I'm using to distribute this unfortunately can't send more than one download link
+          between versions.
+        </p>
+        <p>
+          If you've tried all of the above and it's been longer than 15 minutes, feel free to shoot me an email at
+          <a href="mailto:hello@colbyfayock.com">hello@colbyfayock.com</a> and I'll send you a copy!
+        </p>
+      </Details>
+    </Container>
+  </Section>
+</Layout>

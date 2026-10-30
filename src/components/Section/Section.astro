@@ -1,0 +1,8 @@
+---
+import styles from './Section.module.css';
+const { className = '', backgroundColor, ...rest } = Astro.props;
+---
+
+<section class:list={[styles.section, className]} data-background-color={backgroundColor} {...rest}>
+  <slot />
+</section>

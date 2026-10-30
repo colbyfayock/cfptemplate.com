@@ -1,0 +1,60 @@
+.sectionAuthor {
+  padding: 3rem 0;
+}
+
+.sectionAuthorContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 60rem;
+}
+@media (min-width: 640px) {
+  .sectionAuthorContainer {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+.sectionAuthorContainer h3 {
+  width: 100%;
+  font-size: 2.4em;
+  margin: 0;
+}
+.sectionAuthorContainer h3 a {
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .sectionAuthorContainer h3 a:hover {
+    text-decoration: underline;
+  }
+}
+.sectionAuthorContainer p {
+  font-size: 1.4em;
+  margin: 0.5em 0 0;
+}
+@media (min-width: 480px) {
+  .sectionAuthorContainer a {
+    white-space: nowrap;
+  }
+}
+.sectionAuthorContainer div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectionAuthorPicture {
+  margin: 0 0 2em;
+}
+@media (min-width: 640px) {
+  .sectionAuthorPicture {
+    margin: 0 2em 0 0;
+  }
+}
+.sectionAuthorPicture img {
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+}

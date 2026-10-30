@@ -1,0 +1,13 @@
+---
+import styles from './Nav.module.css';
+import Section from '../Section/Section.astro';
+import { site } from '../../data/site.js';
+---
+
+<nav class={styles.nav}>
+  <Section>
+    <div class="nav-container">
+      <a href="/">{site.siteName}</a>
+    </div>
+  </Section>
+</nav>

@@ -1,0 +1,21 @@
+---
+import styles from './SectionAuthor.module.css';
+import Section from '../Section/Section.astro';
+import Container from '../Container/Container.astro';
+import { site } from '../../data/site.js';
+---
+
+<Section className={styles.sectionAuthor} backgroundColor="secondary">
+  <Container className={styles.sectionAuthorContainer}>
+    <div class={styles.sectionAuthorPicture}>
+      <img width="200" height="200" src="/images/colby-fayock.jpg" alt="Colby Fayock hugging stuffed Star Wars toys" />
+    </div>
+    <div>
+      <h3>From <a href={site.authorUrl}>{site.authorName}</a></h3>
+      <p>
+        Helping others to learn by doing. Author of <a href="http://jamstackhandbook.com/">Jamstack Handbook</a> and
+        <a href="https://50reactprojects.com/">50 Projects for React &amp; the Static Web</a>.
+      </p>
+    </div>
+  </Container>
+</Section>

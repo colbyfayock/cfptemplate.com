@@ -1,0 +1,17 @@
+.section {
+  padding: 2rem 0;
+  margin: 3rem 0;
+}
+.section[data-background-color=primary], .section[data-background-color=secondary], .section[data-background-color=purple-dark] {
+  color: white;
+  margin: 0;
+}
+.section[data-background-color=primary] {
+  background-color: #090b0d;
+}
+.section[data-background-color=secondary] {
+  background-color: #0070f3;
+}
+.section[data-background-color=purple-dark] {
+  background-color: #100E4F;
+}

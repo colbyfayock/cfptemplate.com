@@ -1,40 +1,41 @@
 {
   "name": "cfptemplate",
   "title": "CFP Template",
-  "description": "Create a new product!",
+  "description": "Organize and DRY up submitting your conference proposals!",
   "version": "0.1.0",
   "author": {
     "name": "Colby Fayock",
     "email": "hello@colbyfayock.com",
     "url": "https://twitter.com/colbyfayock"
   },
-  "dependencies": {
-    "@stripe/stripe-js": "^7.9.0",
-    "next": "15.5.3",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^5.5.0",
-    "sass": "^1.92.1"
-  },
   "keywords": [
-    "nextjs",
-    "next js",
-    "sass",
-    "css"
+    "astro",
+    "static site",
+    "conference proposals",
+    "cfp"
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "homepage": "https://next-product-starter.vercel.app",
+  "homepage": "https://cfptemplate.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/next-product-starter"
+    "url": "https://github.com/colbyfayock/cfptemplate.com"
   },
   "bugs": {
-    "url": "https://github.com/colbyfayock/next-product-starter/issues"
+    "url": "https://github.com/colbyfayock/cfptemplate.com/issues"
+  },
+  "devDependencies": {
+    "astro": "7.4.4"
+  },
+  "overrides": {
+    "unstorage": {
+      "anymatch": {
+        "picomatch": "^2.3.2"
+      }
+    }
   }
 }

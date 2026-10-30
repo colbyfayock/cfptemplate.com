@@ -1,0 +1,40 @@
+---
+import styles from './Footer.module.css';
+import Section from '../Section/Section.astro';
+import Container from '../Container/Container.astro';
+import CosmoMono from '../CosmoMono/CosmoMono.astro';
+import { site } from '../../data/site.js';
+import { icons } from '../../data/icons.js';
+const year = new Date().getFullYear();
+---
+
+<footer class={styles.footer}>
+  <Section className={styles.footerSection}>
+    <Container className={`${styles.footerContainer} ${styles.footerContentContainer}`}>
+      <div>
+        <h3>Have any questions?</h3>
+        <p>Contact me at <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a></p>
+      </div>
+      <div>
+        <h3>Moar awesome!</h3>
+        <ul>
+          {site.footer.links.map(({ url, title }) => <li><a href={url}>{title}</a></li>)}
+        </ul>
+      </div>
+      <div class={styles.footerLegal}>
+        <div>
+          <p>&copy; {year}, <a href={site.authorUrl}>{site.authorName}</a></p>
+          <ul>
+            <li><a href="https://twitter.com/colbyfayock" aria-label="Twitter"><span set:html={icons.twitter}></span></a></li>
+            <li><a href="https://youtube.com/colbyfayock" aria-label="YouTube" class={styles.footerIconYoutube}><span set:html={icons.youtube}></span></a></li>
+            <li><a href="https://github.com/colbyfayock" aria-label="GitHub"><span set:html={icons.github}></span></a></li>
+            <li><a href="https://twitch.tv/colbyfayock" aria-label="Twitch" class={styles.footerIconTwitch}><span set:html={icons.twitch}></span></a></li>
+          </ul>
+        </div>
+        <a class={styles.footerCosmo} href="https://spacejelly.dev" aria-label="Space Jelly">
+          <CosmoMono strokeClass={styles.footerCosmoStroke} />
+        </a>
+      </div>
+    </Container>
+  </Section>
+</footer>

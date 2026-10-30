@@ -1,0 +1,121 @@
+.footer {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #100E4F;
+}
+
+.footerSection {
+  text-align: center;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+.footerSection:first-child {
+  border: none;
+}
+.footerSection,
+.footerSection p {
+  color: inherit;
+}
+.footerSection p:first-child {
+  margin-top: 0;
+}
+.footerSection p:last-child {
+  margin-bottom: 0;
+}
+@media (hover: hover) {
+  .footerSection a:hover {
+    color: #eef0f3;
+  }
+}
+
+.footerContentContainer {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+@media (min-width: 640px) {
+  .footerContentContainer {
+    text-align: left;
+    flex-direction: row;
+  }
+}
+.footerContentContainer div {
+  min-width: 0;
+  margin: 0.5em 0;
+}
+@media (min-width: 640px) {
+  .footerContentContainer div {
+    margin: 0 1em;
+  }
+}
+.footerContentContainer ul {
+  list-style: none;
+  padding-left: 0;
+}
+.footerContentContainer h3,
+.footerContentContainer p,
+.footerContentContainer ul {
+  margin: 0;
+}
+.footerContentContainer h3 {
+  color: #aa86ca;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+}
+.footerContentContainer a {
+  text-decoration: none;
+}
+.footerContentContainer a:hover {
+  text-decoration: underline;
+}
+
+.footerLegal {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 1em;
+}
+@media (min-width: 960px) {
+  .footerLegal {
+    justify-content: flex-end;
+    width: auto;
+    margin-top: 0;
+  }
+}
+.footerLegal ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.6em;
+}
+.footerLegal li {
+  margin-right: 0.8em;
+}
+.footerLegal a svg {
+  font-size: 1.4em;
+}
+
+.footerCosmo {
+  order: -1;
+  font-size: 0.5em;
+  margin-right: 1em;
+  margin-top: -1.5em;
+}
+@media (min-width: 960px) {
+  .footerCosmo {
+    order: 0;
+    transform: scaleX(-1);
+    margin-right: 0;
+  }
+}
+
+.footerCosmoStroke {
+  fill: #100E4F;
+}

@@ -1,0 +1,8 @@
+---
+import styles from './FormRow.module.css';
+const { className = '' } = Astro.props;
+---
+
+<div class:list={[styles.formRow, className]}>
+  <slot />
+</div>

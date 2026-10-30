@@ -1,0 +1,8 @@
+---
+import styles from './Form.module.css';
+const { className = '', ...rest } = Astro.props;
+---
+
+<form class:list={[styles.form, className]} method="post" {...rest}>
+  <slot />
+</form>
