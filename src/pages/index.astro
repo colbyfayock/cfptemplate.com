@@ -1,0 +1,114 @@
+---
+import styles from '../styles/App.module.css';
+import Layout from '../components/Layout/Layout.astro';
+import Section from '../components/Section/Section.astro';
+import Container from '../components/Container/Container.astro';
+import Button from '../components/Button/Button.astro';
+import Form from '../components/Form/Form.astro';
+import FormRow from '../components/FormRow/FormRow.astro';
+import SectionAuthor from '../components/SectionAuthor/SectionAuthor.astro';
+import CfpLogo from '../components/CfpLogo/CfpLogo.astro';
+import { icons } from '../data/icons.js';
+
+const formAction = 'https://mailtik.spacejelly.dev/api/forms/cfp-template';
+---
+
+<Layout displayNav={false}>
+  <Section className={styles.homeHeroSection}>
+    <Container className={styles.homeHeroContainer}>
+      <div class={styles.homeHeroContent}>
+        <h1 class={styles.homeTitle}>
+          <CfpLogo />
+          CFP Template
+        </h1>
+
+        <p class={styles.homeSubtitle}>Organize and DRY up submitting your conference proposals!</p>
+
+        <Form className={styles.homeHeroForm} action={formAction} data-signup-form>
+          <input type="text" autocomplete="off" tabindex="-1" name="phone" value="" readonly aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;border:0;padding:0;margin:0;overflow:hidden" />
+          <input type="hidden" name="redirect" value="https://cfptemplate.com" />
+          <input type="hidden" name="tags" value="location:cfptemplate.com" />
+          <FormRow>
+            <p>Get the <strong>FREE</strong> template straight to your inbox.</p>
+          </FormRow>
+          <div class={styles.homeHeroFormInputs}>
+            <FormRow>
+              <input name="email" aria-label="Your email address" placeholder="Email Address" required type="email" />
+            </FormRow>
+            <FormRow>
+              <Button>Download Free</Button>
+            </FormRow>
+          </div>
+        </Form>
+      </div>
+
+      <div class={styles.homeHeroImage}>
+        <img src="/images/cfp-template-preview.png" alt="CFP Template Preview" />
+      </div>
+    </Container>
+  </Section>
+
+  <Section className={styles.homeExpectSection}>
+    <Container>
+      <h2>What to expect?</h2>
+      <ul>
+        <li>
+          <h3>Proposal Template</h3>
+          <p>Optimized templates in multiple formats that let you focus on what makes your proposal unique.</p>
+        </li>
+        <li>
+          <h3>Speaker Bio Template</h3>
+          <p>Don’t get stuck searching for your headshot, start your proposal with all your information in one place.</p>
+        </li>
+        <li>
+          <h3>CFP Guides</h3>
+          <p>Learn how to make the best use of these templates along with some tips for what makes a good proposal.</p>
+        </li>
+      </ul>
+    </Container>
+  </Section>
+
+  <Section backgroundColor="primary">
+    <Container className={styles.homeFormatsContainer}>
+      <div class={styles.homeFormatsContent}>
+        <h2>All the formats you’ve grown to love and expect like Notion, Markdown, and Google Docs.</h2>
+        <p>Missing one? <a href="mailto:hello@colbyfayock.com">Let me know</a>!</p>
+      </div>
+      <div class={styles.homeFormatsLogos}>
+        <ul>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.notion}></span><p>Notion</p></li>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.markdown}></span><p>Markdown</p></li>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.drive}></span><p>Google Docs</p></li>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.word}></span><p>MS Word</p></li>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.pdf}></span><p>PDF</p></li>
+          <li><span class={styles.homeFormatsLogosIcon} set:html={icons.text}></span><p>TextBundle</p></li>
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <Section className={styles.homeDownloadSection}>
+    <Container>
+      <h2>Grab your free copy!</h2>
+      <Form action={formAction} data-signup-form>
+        <input type="text" autocomplete="off" tabindex="-1" name="phone" value="" readonly aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;border:0;padding:0;margin:0;overflow:hidden" />
+        <input type="hidden" name="redirect" value="https://cfptemplate.com" />
+        <input type="hidden" name="tags" value="location:cfptemplate.com" />
+        <FormRow>
+          <p>Get the <strong>FREE</strong> template straight to your inbox.</p>
+        </FormRow>
+        <div class={styles.homeDownloadFormInputs}>
+          <FormRow>
+            <input name="email" aria-label="Your email address" placeholder="Email Address" required type="email" />
+          </FormRow>
+          <FormRow>
+            <Button>Download Free</Button>
+          </FormRow>
+        </div>
+      </Form>
+    </Container>
+  </Section>
+
+  <SectionAuthor />
+  <script slot="scripts" is:inline src="/scripts/signup.js" defer></script>
+</Layout>

@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+.gettingStartedSection {
+  text-align: center;
+}
+.gettingStartedSection h1,
+.gettingStartedSection h2,
+.gettingStartedSection h3,
+.gettingStartedSection p {
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gettingStartedSection h1 {
+  font-size: 3em;
+}
+.gettingStartedSection h2 {
+  font-size: 2.5em;
+}
+.gettingStartedSection h3 {
+  font-size: 2em;
+}
+.gettingStartedSection p {
+  font-size: 1.6em;
+}
+.gettingStartedSection summary h3 {
+  font-size: 1.2em;
+}
+
+.banner {
+  padding: 1rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+.banner.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-bottom: 1px solid #c3e6cb;
+}
+.banner.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-bottom: 1px solid #f5c6cb;
+}
+.banner p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.homeHeroSection.homeHeroSection {
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.homeHeroContainer {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  .homeHeroContainer {
+    flex-direction: row;
+  }
+}
+.homeHeroContainer > div {
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .homeHeroContainer > div {
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+.homeHeroContent {
+  padding: 5em 0 2em;
+}
+@media (min-width: 800px) {
+  .homeHeroContent {
+    padding: 12vw 0;
+  }
+}
+@media (min-width: 1280px) {
+  .homeHeroContent {
+    padding: 10em 0;
+  }
+}
+
+.homeTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vw;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 800px) {
+  .homeTitle {
+    font-size: 6vw;
+    text-align: left;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .homeTitle {
+    font-size: 4em;
+  }
+}
+@media (min-width: 1280px) {
+  .homeTitle {
+    font-size: 5em;
+  }
+}
+.homeTitle svg {
+  margin-right: 0.2em;
+}
+
+.homeSubtitle {
+  display: block;
+  width: 100%;
+  font-size: 6vw;
+  text-align: center;
+  margin: 0.6em 0 1em;
+}
+@media (min-width: 800px) {
+  .homeSubtitle {
+    font-size: 4vw;
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .homeSubtitle {
+    font-size: 2em;
+    text-align: left;
+  }
+}
+
+.homeHeroImage {
+  position: relative;
+  padding-top: 60%;
+}
+@media (min-width: 800px) {
+  .homeHeroImage {
+    padding-top: 0;
+  }
+}
+.homeHeroImage img {
+  position: absolute;
+  top: -2em;
+  width: 170vw;
+  margin-bottom: -12em;
+}
+@media (min-width: 800px) {
+  .homeHeroImage img {
+    top: 1em;
+    left: 0;
+    width: 100vw;
+  }
+}
+@media (min-width: 1024px) {
+  .homeHeroImage img {
+    width: 70vw;
+  }
+}
+
+.homeHeroForm {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .homeHeroForm {
+    text-align: left;
+  }
+}
+.homeHeroForm p {
+  font-size: 1.4em;
+  color: #5c7086;
+}
+.homeHeroForm button,
+.homeHeroForm input {
+  width: 100%;
+  max-width: none;
+}
+@media (min-width: 480px) {
+  .homeHeroForm button,
+  .homeHeroForm input {
+    width: auto;
+  }
+}
+.homeHeroForm input {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .homeHeroForm input {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeHeroFormInputs {
+    display: flex;
+  }
+}
+@media (min-width: 1024px) {
+  .homeHeroFormInputs > div:first-child {
+    margin-right: 1em;
+  }
+}
+
+.homeExpectSection.homeExpectSection {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.1);
+}
+.homeExpectSection h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+.homeExpectSection ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  font-size: 1.4em;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .homeExpectSection ul {
+    flex-wrap: nowrap;
+    margin: 0 -1.5em;
+  }
+}
+.homeExpectSection li {
+  width: 100%;
+  padding: 0 1.5em;
+}
+@media (min-width: 800px) {
+  .homeExpectSection li {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .homeExpectSection li {
+    width: auto;
+  }
+}
+
+.homeFormatsContainer {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  .homeFormatsContainer {
+    flex-direction: row;
+  }
+}
+.homeFormatsContainer > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .homeFormatsContainer > div {
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+.homeFormatsContent {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2em;
+}
+@media (min-width: 800px) {
+  .homeFormatsContent {
+    text-align: left;
+    padding-right: 2em;
+    margin-bottom: 0;
+  }
+}
+.homeFormatsContent h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-top: 0;
+}
+.homeFormatsContent p {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.homeFormatsLogos {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.homeFormatsLogos ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.homeFormatsLogos li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33.33%;
+  padding: 1em;
+}
+.homeFormatsLogos p {
+  color: #b1bdca;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.homeFormatsLogosIcon {
+  display: block;
+  font-size: 4em;
+  margin-bottom: 0;
+}
+@media (min-width: 800px) {
+  .homeFormatsLogosIcon {
+    font-size: 5em;
+  }
+}
+
+.homeDownloadSection.homeDownloadSection {
+  text-align: center;
+}
+.homeDownloadSection h2 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+.homeDownloadSection p {
+  font-size: 1.4em;
+  color: #5c7086;
+}
+.homeDownloadSection button,
+.homeDownloadSection input {
+  width: 100%;
+  max-width: none;
+}
+@media (min-width: 480px) {
+  .homeDownloadSection button,
+  .homeDownloadSection input {
+    width: auto;
+  }
+}
+.homeDownloadSection input {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .homeDownloadSection input {
+    text-align: left;
+  }
+}
+
+@media (min-width: 800px) {
+  .homeDownloadFormInputs {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .homeDownloadFormInputs > div:first-child {
+    margin-right: 1em;
+  }
+}

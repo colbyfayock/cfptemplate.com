@@ -1,0 +1,81 @@
+---
+import styles from './Layout.module.css';
+import '../../styles/global.css';
+import Main from '../Main/Main.astro';
+import Nav from '../Nav/Nav.astro';
+import Footer from '../Footer/Footer.astro';
+import ShareAnchor from '../ShareAnchor/ShareAnchor.astro';
+import Container from '../Container/Container.astro';
+import { site } from '../../data/site.js';
+import pageStyles from '../../styles/App.module.css';
+
+const { displayNav = true, displayShare = true, pageTitle = site.siteName } = Astro.props;
+const metaDescription = 'Organize and DRY up submitting your conference proposals!';
+const ogImage = `${site.homepage}/cfp-template-social.jpg`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle} - {site.siteName}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content={metaDescription} />
+    <meta property="og:title" content={site.siteName} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={site.homepage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.siteName} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:width" content="2024" />
+    <meta property="og:image:height" content="1012" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content={site.homepage} />
+    <meta name="twitter:creator" content="@colbyfayock" />
+    <script is:inline>
+      if (window.location.hostname === 'cfptemplate.com') {
+        window.plausible = window.plausible || function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+        window.plausible.init = window.plausible.init || function (options) {
+          window.plausible.o = options || {};
+        };
+        window.plausible.init();
+
+        const plausibleScript = document.createElement('script');
+        plausibleScript.async = true;
+        plausibleScript.src = 'https://plausible.io/js/pa-wos1mr4O8BRi28r2jlK8h.js';
+        document.head.append(plausibleScript);
+      }
+    </script>
+  </head>
+  <body>
+    <div class={styles.layoutContainer}>
+      {displayNav && <Nav />}
+      <div
+        class={pageStyles.banner}
+        data-form-banner
+        data-success-class={pageStyles.success}
+        data-error-class={pageStyles.error}
+        hidden
+        role="status"
+        aria-live="polite"
+      >
+        <Container><p data-banner-message></p></Container>
+      </div>
+      <Main><slot /></Main>
+      <div>
+        {displayShare && <ShareAnchor />}
+        <Footer />
+      </div>
+    </div>
+    <slot name="scripts" />
+  </body>
+</html>

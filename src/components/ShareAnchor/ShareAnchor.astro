@@ -1,0 +1,23 @@
+---
+import styles from './ShareAnchor.module.css';
+import buttonStyles from '../Button/Button.module.css';
+import Section from '../Section/Section.astro';
+import Container from '../Container/Container.astro';
+import { site } from '../../data/site.js';
+import { icons } from '../../data/icons.js';
+
+const message = `📝 Looking to make your next CFP submission a little smoother?\n\n🚀 Check out @colbyfayock's CFP Template\n\n🧐 Includes a proposal template, speaker bio template, and even guides to get started\n\n👇 Go download it FREE!\n\nhttps://cfptemplate.com`;
+const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+const { className = '', backgroundColor = 'primary' } = Astro.props;
+---
+
+<Section className={`${styles.shareAnchor} ${className}`} backgroundColor={backgroundColor}>
+  <Container className={styles.shareAnchorContainer}>
+    <slot><h3>Love {site.siteName}?</h3></slot>
+    <p class={styles.shareAnchorActions}>
+      <a class:list={[buttonStyles.button, styles.shareAnchorButton]} href={shareUrl} target="_blank" rel="noopener noreferrer">
+        <span set:html={icons.twitter}></span> Share on Twitter
+      </a>
+    </p>
+  </Container>
+</Section>

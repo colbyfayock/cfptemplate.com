@@ -1,0 +1,8 @@
+---
+import styles from './Container.module.css';
+const { className = '' } = Astro.props;
+---
+
+<div class:list={[styles.container, className]}>
+  <slot />
+</div>

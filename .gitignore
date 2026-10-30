@@ -8,7 +8,11 @@
 # testing
 /coverage
 
-# next.js
+# Astro
+/.astro/
+/dist/
+
+# Existing Next.js build output
 /.next/
 /out/
 

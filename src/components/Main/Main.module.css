@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main > section:last-child {
+  flex-grow: 1;
+}
